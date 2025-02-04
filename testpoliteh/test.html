@@ -1,0 +1,40 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по программированию</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+    <div id="start-screen">
+        <h1>Добро пожаловать в тест по программированию!</h1>
+        <label for="username">Введите ваше имя:</label>
+        <input type="text" id="username" placeholder="Ваше имя" required>
+        <button onclick="startTest()">Начать тест</button>
+    </div>
+
+    <div id="test-screen" style="display: none;">
+        <div id="timer">Осталось: <span id="time-left">60</span> секунд</div>
+        <div id="username-display"></div>
+
+        <div id="questions-container">
+            <!-- Вопросы будут вставляться сюда -->
+        </div>
+
+        <button id="submit-btn" onclick="submitTest()">Отправить</button>
+    </div>
+
+    <div id="result-screen" style="display: none;">
+        <h2>Результат:</h2>
+        <p id="correct-answers">Правильных ответов: 0</p>
+        <p id="incorrect-answers">Неправильных ответов: 0</p>
+        <p id="unanswered">Неотвеченных вопросов: 0</p>
+        <button onclick="reloadPage()">Пройти тест снова</button>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>
