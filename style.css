@@ -1,27 +1,43 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    background: black;
+    color: white;
     text-align: center;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     position: relative;
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 90%;
+h1 {
+    font-size: 24px;
 }
 
-h1, h2, p {
-    color: #ff4d6d;
+.intro {
+    font-size: 14px;
+    margin: 20px;
+}
+
+.gallery {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+}
+
+.moving-photo {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    animation: scrollPhotos 10s linear infinite;
+}
+
+@keyframes scrollPhotos {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .buttons {
@@ -29,115 +45,26 @@ h1, h2, p {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 18px;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-#yes {
-    background: #ff4d6d;
+#yes-btn {
+    background: green;
     color: white;
 }
 
-#no {
-    background: gray;
+#no-btn {
+    background: red;
     color: white;
 }
 
 #play-music {
-    background: #ffcc00;
-    color: black;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-#yes:hover {
-    background: #ff1e50;
-}
-
-#no:hover {
-    background: #444;
-}
-
-.hidden {
-    display: none;
-}
-
-#explosion-text {
-    font-size: 24px;
-    color: red;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    transform: rotate(-45deg);
-    animation: float 3s infinite;
-}
-
-.heart::before, .heart::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background: red;
-    position: absolute;
-    border-radius: 50%;
-}
-
-.heart::before {
-    top: -10px;
-    left: 0;
-}
-
-.heart::after {
-    left: 10px;
-    top: 0;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
-    100% { transform: translateY(-200px) rotate(-45deg); opacity: 0; }
-}
-
-.gif-container {
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.gif {
-    width: 100px;
-    animation: moveSide 3s infinite alternate ease-in-out;
-}
-
-@keyframes moveSide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(200px); }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    .gif {
-        width: 80px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 8px 15px;
-    }
+    margin-top: 20px;
+    background: blue;
+    color: white;
 }
