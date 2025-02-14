@@ -7,6 +7,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         
+
+ <button class="btn" onclick="playMusic()">Нажми на меня </button>
+
+
         body {
             background-color: #ff033e;
             color: white;
@@ -90,13 +94,13 @@
 <body>
     <div class="container">
         <h1>Талшын, с Днем Всех Влюбленных! ❤️</h1>
-        <p>От SAKE: Пусть твои губы всегда улыбаются, а сердце радуется!</p>
-        <p>Ты пойдешь со мной на свидание?</p>
+        <p class="intro">Этот сайт — маленький сюрприз от меня.</p>
+        <p>Надеюсь, он поднимет тебе настроение ❤️</p>
         <div class="buttons">
             <button class="btn btn-yes" onclick="explodeYes()">Да</button>
             <button class="btn btn-no" onclick="showNoMessage()">Нет</button>
         </div>
-        <p class="hidden" id="noMessage">Нет такого варианта ответа 😘</p>
+        <p class="hidden" id="noMessage">Нельзя так балапанчик</p>
     </div>
     
     <div class="photo-slider">
@@ -112,7 +116,7 @@
     <div class="heart-container" id="heartContainer"></div>
     
     <audio id="bgMusic" src="0ab56f0ff66d4f7.mp3"></audio>
-    <button class="btn" onclick="playMusic()">Нажми на меня 🎶</button>
+    
     
     <script>
         function explodeYes() {
