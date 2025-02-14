@@ -3,145 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение для Талшын 💖</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffe6f2;
-            overflow-x: hidden;
-            position: relative;
-        }
-        h1 {
-            margin-top: 20px;
-            font-size: 26px;
-            color: #d63384;
-        }
-        p {
-            font-size: 18px;
-            margin: 10px;
-            color: #444;
-        }
-        .container {
-            padding: 20px;
-            margin-top: 50px;
-        }
-        .btn {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-        .yes {
-            background-color: #ff4081;
-            color: white;
-        }
-        .yes:active {
-            transform: scale(1.2);
-        }
-        .no {
-            background-color: #444;
-            color: white;
-        }
-        .music-btn {
-            background-color: #6200ea;
-            color: white;
-            font-size: 18px;
-            padding: 12px;
-            margin-top: 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            clip-path: polygon(50% 15%, 100% 40%, 75% 100%, 50% 85%, 25% 100%, 0% 40%);
-            animation: float 4s infinite linear;
-        }
-        @keyframes float {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-200px) scale(0); opacity: 0; }
-        }
-    </style>
+    <title>Сюрприз для Талшын</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/press-start-2p" rel="stylesheet">
 </head>
 <body>
-    <h1>Привет, Талшын 💖</h1>
-    <p>Сегодня особенный день, и у меня к тебе вопрос...</p>
-
+    <audio id="bg-music" src="0ab56f0ff66d4f7.mp3" loop></audio>
+    
     <div class="container">
-        <p>Ты пойдешь со мной на свидание? 😘</p>
-        <button class="btn yes" onclick="explodeYes()">ДА</button>
-        <button class="btn no" onclick="showPopup()">НЕТ</button>
+        <h1>Привет, Талшын!</h1>
+        <p class="intro">С Днём всех влюблённых!,Этот сайт — маленький сюрприз от меня. Надеюсь, он поднимет тебе настроение ❤️</p>
+        
+        <div class="gallery">
+            <img src="photo1.jpg" alt="Фото 1" class="moving-photo">
+            <img src="photo2.jpg" alt="Фото 2" class="moving-photo">
+            <img src="photo3.jpg" alt="Фото 3" class="moving-photo">
+        </div>
+        
+        <div class="buttons">
+            <button id="yes-btn">Да</button>
+            <button id="no-btn">Нет</button>
+        </div>
+        
+        <button id="play-music">Нажми на меня</button>
     </div>
-
-    <button class="music-btn" onclick="playMusic()"> Нажми на меня </button>
-
-    <audio id="background-music" loop>
-        <source src="0ab56f0ff66d4f7.mp3" type="audio/mpeg">
-    </audio>
-
-    <div id="popup" class="popup">
-        <p>Нет такого варианта ответа! 😆</p>
-        <button onclick="closePopup()">Окей</button>
-    </div>
-
-    <script>
-        function explodeYes() {
-            let yesButton = document.querySelector('.yes');
-            yesButton.style.transition = "0.5s";
-            yesButton.style.transform = "scale(5)";
-            yesButton.style.opacity = "0";
-            setTimeout(() => {
-                document.body.innerHTML = `<h1>Спасибо, балапанчик! 💖</h1>`;
-            }, 500);
-        }
-
-        function playMusic() {
-            let music = document.getElementById("background-music");
-            music.play();
-        }
-
-        function showPopup() {
-            document.getElementById("popup").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-
-        function createHeart() {
-            let heart = document.createElement("div");
-            heart.className = "heart";
-            heart.style.left = Math.random() * window.innerWidth + "px";
-            heart.style.top = window.innerHeight + "px";
-            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
-        }
-
-        setInterval(createHeart, 500);
-    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
