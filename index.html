@@ -130,16 +130,24 @@
         function playMusic() {
             document.getElementById('bgMusic').play();
         }
-        function createHeart() {
-            let heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.getElementById('heartContainer').appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-        setInterval(createHeart, 300);
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    // Рандомная позиция по высоте (от 0 до 100% экрана)
+    heart.style.top = Math.random() * 100 + "vh";
+    heart.style.left = Math.random() * 100 + "vw";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+
     </script>
 </body>
 </html>
